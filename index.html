@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akash — Web Designer · App Developer · Bug Hunter</title>
+<meta name="description" content="Akash designs websites for clients and builds apps, alongside English Honours studies and independent security research.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=Noto+Sans+Bengali:wght@400;500;600&family=Noto+Serif+Bengali:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #111418;
+    --soft: #55606b;
+    --line: #e6e8eb;
+    --paper: #fdfdfc;
+    --wash: #f4f4f1;
+    --link: #0b57d0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', 'Noto Sans Bengali', system-ui, sans-serif;
+    background: var(--paper); color: var(--ink);
+    font-size: 16px; line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  body.bn h1, body.bn h2, body.bn h3, body.bn .pull p,
+  body.bn .wordmark, body.bn .identity .name {
+    font-family: 'Noto Serif Bengali', 'Fraunces', serif;
+  }
+
+  .shell { max-width: 920px; margin: 0 auto; padding: 0 28px; }
+
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 0; border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; background: rgba(253,253,252,.92);
+    backdrop-filter: blur(8px); z-index: 10;
+  }
+  nav .wordmark { font-family: 'Fraunces', 'Noto Serif Bengali', serif; font-weight: 600; font-size: 17px; }
+  .nav-right { display: flex; align-items: center; gap: 24px; }
+  nav ul { display: flex; gap: 26px; list-style: none; font-size: 13.5px; }
+  nav ul a { color: var(--soft); }
+  nav ul a:hover { color: var(--ink); text-decoration: none; }
+  .lang-btn {
+    font-family: inherit; font-size: 12.5px; font-weight: 500;
+    border: 1px solid var(--line); background: #fff; color: var(--soft);
+    border-radius: 99px; padding: 4px 14px; cursor: pointer;
+    transition: color .2s ease, border-color .2s ease;
+  }
+  .lang-btn:hover { color: var(--ink); border-color: #c8ccd1; }
+
+  .hero { padding: 84px 0 60px; border-bottom: 1px solid var(--line); }
+  .hero h1 {
+    font-family: 'Fraunces', 'Noto Serif Bengali', serif; font-weight: 600;
+    font-size: clamp(30px, 5.2vw, 48px); line-height: 1.2; letter-spacing: -.01em;
+  }
+  .hero p.lede { margin-top: 18px; max-width: 56ch; color: var(--soft); font-size: 17px; }
+  .hero .meta { margin-top: 26px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .hero .meta span {
+    font-size: 12.5px; font-weight: 500; color: var(--soft);
+    border: 1px solid var(--line); border-radius: 99px; padding: 4px 12px;
+  }
+
+  .cols { display: grid; grid-template-columns: 260px 1fr; gap: 56px; padding: 60px 0; }
+
+  aside { position: relative; }
+  aside .inner { position: sticky; top: 88px; }
+  .identity { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--wash); }
+  .identity .photo {
+    display: block; width: 100%;
+    aspect-ratio: 6 / 5;
+    object-fit: cover;
+    object-position: center 28%;
+  }
+  .identity .body { padding: 18px 20px; }
+  .identity .name { font-weight: 600; font-size: 15px; }
+  .identity dl { margin-top: 12px; }
+  .identity dt {
+    font-size: 11px; text-transform: uppercase; letter-spacing: .09em;
+    color: var(--soft); margin-top: 12px;
+  }
+  .identity dd { font-size: 13.5px; margin-top: 2px; }
+  aside .elsewhere { margin-top: 20px; font-size: 13.5px; color: var(--soft); }
+  aside .elsewhere a { display: block; padding: 3px 0; }
+
+  article section { margin-bottom: 52px; scroll-margin-top: 90px; }
+  article h2 {
+    font-family: 'Fraunces', 'Noto Serif Bengali', serif; font-weight: 600; font-size: 21px;
+    margin-bottom: 14px; letter-spacing: -.005em;
+  }
+  article p { margin-bottom: 14px; color: #262c33; max-width: 62ch; }
+  article p em, article li em { font-style: italic; }
+  article ul { list-style: none; max-width: 62ch; }
+  article li {
+    padding: 10px 0 10px 22px; position: relative;
+    border-bottom: 1px solid var(--line); color: #262c33; font-size: 15px;
+  }
+  article li:last-child { border-bottom: none; }
+  article li::before { content: "—"; position: absolute; left: 0; color: var(--soft); }
+
+  .project {
+    display: block; border: 1px solid var(--line); border-radius: 12px;
+    padding: 22px 24px; margin-top: 8px; background: #fff;
+    transition: border-color .25s ease, transform .25s ease;
+  }
+  .project:hover { border-color: #c8ccd1; transform: translateY(-2px); text-decoration: none; }
+  .project .tag { font-size: 11px; text-transform: uppercase; letter-spacing: .09em; color: var(--soft); }
+  .project h3 { font-family: 'Fraunces', 'Noto Serif Bengali', serif; font-size: 19px; margin: 4px 0 6px; color: var(--ink); }
+  .project p { font-size: 14px; color: var(--soft); margin: 0; max-width: 55ch; }
+  .project .go { display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--link); }
+
+  .pull { border-left: 2px solid var(--ink); padding: 4px 0 4px 22px; margin: 8px 0 20px; }
+  .pull p {
+    font-family: 'Fraunces', 'Noto Serif Bengali', serif; font-size: 19px;
+    line-height: 1.6; color: var(--ink); font-style: italic; max-width: 46ch;
+  }
+
+  footer {
+    border-top: 1px solid var(--line); padding: 30px 0 46px;
+    display: flex; justify-content: space-between; font-size: 12.5px; color: var(--soft);
+  }
+
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  @media (max-width: 720px) {
+    nav ul { display: none; }
+    .nav-right { gap: 0; }
+    .cols { grid-template-columns: 1fr; gap: 40px; padding: 40px 0; }
+    aside .inner { position: static; }
+    .identity { max-width: 320px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+<nav>
+  <div class="wordmark">Akash</div>
+  <div class="nav-right">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#research">Research</a></li>
+    </ul>
+    <button id="langToggle" class="lang-btn" type="button">বাংলা</button>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1 id="t-hero" class="reveal">Websites for clients.<br>Apps of my own. Bugs on the side.</h1>
+  <p class="lede reveal" id="t-lede">I'm Akash — an English Honours student who designs and builds websites for clients, develops apps, and spends his quieter hours finding security bugs in places they shouldn't be. It all started in a school computer lab.</p>
+  <div class="meta reveal">
+    <span id="t-tag1">Web Designer</span>
+    <span id="t-tag2">App Developer</span>
+    <span id="t-tag3">English Honours</span>
+    <span id="t-tag4">Bug Hunter</span>
+    <span id="t-tag5">West Bengal, India</span>
+  </div>
+</div>
+
+<div class="cols">
+
+  <aside>
+    <div class="inner">
+      <div class="identity reveal">
+        <img class="photo" src="photo.png" alt="Photo of Akash">
+        <div class="body">
+          <div class="name" id="t-name">Akash</div>
+          <dl>
+            <dt id="t-dt1">Nationality</dt><dd id="t-dd1">Indian</dd>
+            <dt id="t-dt2">Occupation</dt><dd id="t-dd2">Freelance web designer &amp; app developer</dd>
+            <dt id="t-dt3">Education</dt><dd id="t-dd3">English Honours (ongoing)</dd>
+            <dt id="t-dt4">Known for</dt><dd id="t-dd4">Reporting a bug on NASA's official website</dd>
+            <dt id="t-dt5">Approach</dt><dd id="t-dd5">Self-taught</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="elsewhere reveal">
+        <a href="mailto:akash115251x@gmail.com">akash115251x@gmail.com</a>
+        <a href="https://github.com/AkashYT94" target="_blank" rel="noopener">GitHub — @AkashYT94</a>
+        <a href="https://skylink-esports.onrender.com/" target="_blank" rel="noopener" id="t-link1">SkyLink Esports (app)</a>
+      </div>
+    </div>
+  </aside>
+
+  <article>
+    <section id="about" class="reveal">
+      <h2 id="t-h-about">About</h2>
+      <p id="t-p-about">Akash is an undergraduate reading for a degree in English Honours while running a parallel life on the web. By day he's a student; the rest of the time he designs and builds websites for clients and develops apps of his own. He is, by his own description, an introvert — more comfortable in the company of books and code listings than of crowds, and entirely at peace with that.</p>
+      <div class="pull"><p id="t-quote">A good bug report and a good essay are the same craft: taking something complicated and saying it simply.</p></div>
+    </section>
+
+    <section id="work" class="reveal">
+      <h2 id="t-h-work">Work</h2>
+      <p id="t-p-work">Client websites and independent apps — designed, built, and shipped end to end.</p>
+      <a class="project" href="https://skylink-esports.onrender.com/" target="_blank" rel="noopener">
+        <span class="tag" id="t-tag-work">App · Live</span>
+        <h3>SkyLink Esports</h3>
+        <p id="t-p-skylink">A Free Fire tournament platform — handles sign-ups, tournament management, and payments, built and deployed end to end.</p>
+        <span class="go" id="t-go">Visit app →</span>
+      </a>
+    </section>
+
+    <section id="background" class="reveal">
+      <h2 id="t-h-bg">Background</h2>
+      <ul>
+        <li id="t-bg1">Grew up in a middle-class household where a computer was a shared, precious thing — the school lab, specifically.</li>
+        <li id="t-bg2">A consistent class topper through school, though the lab hours mattered more than the marks.</li>
+        <li id="t-bg3">Chose English Honours deliberately; never saw literature and technology as separate rooms.</li>
+        <li id="t-bg4">No formal computer training — everything technical was learned alone, from documentation, tutorials, and long nights of trial and error.</li>
+      </ul>
+    </section>
+
+    <section id="security" class="reveal">
+      <h2 id="t-h-sec">Security Work</h2>
+      <p id="t-p-sec1">The curiosity started with a simple question: <em>how does a website actually work?</em> Learning HTML and JavaScript to answer it eventually led to a harder question — <em>where does a website quietly break?</em></p>
+      <ul>
+        <li id="t-sec1">Found and responsibly disclosed a security bug on NASA's official website through their Vulnerability Disclosure Program.</li>
+        <li id="t-sec2">Has since reported vulnerabilities on several other international websites, receiving acknowledgements from the organisations involved.</li>
+        <li id="t-sec3">Working method is unhurried — reads a target site for hours before touching anything, the same way he reads a short story: closely, and more than once.</li>
+      </ul>
+    </section>
+
+    <section id="research" class="reveal">
+      <h2 id="t-h-res">Research &amp; Reading</h2>
+      <ul>
+        <li id="t-res1">Current research sits where literature and technology overlap — treating language itself as a system with rules worth uncovering.</li>
+        <li id="t-res2">Off hours are spent almost entirely reading: novels, essays, and technical writing share the same shelf.</li>
+        <li id="t-res3">Long-term ambition is modest and specific — keep building quietly, keep reporting carefully, and let the work speak.</li>
+      </ul>
+    </section>
+  </article>
+</div>
+
+<footer>
+  <span id="t-copy">© 2026 Akash</span>
+  <span id="t-updated">Last updated October 2026</span>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var bn = {
+    't-hero': 'ক্লায়েন্টদের জন্য ওয়েবসাইট।<br>নিজের বানানো অ্যাপ। পাশে বাগ হান্টিং।',
+    't-lede': 'আমি আকাশ — English Honours-এর ছাত্র। পাশাপাশি ক্লায়েন্টদের জন্য ওয়েবসাইট ডিজাইন ও তৈরি করি, নিজস্ব অ্যাপ বানাই, আর অবসরের সময়ে নানা ওয়েবসাইটে নিরাপত্তা-বাগ খুঁজে বের করি। এই যাত্রা শুরু হয়েছিল স্কুলের কম্পিউটার ল্যাব থেকে।',
+    't-tag1': 'ওয়েব ডিজাইনার',
+    't-tag2': 'অ্যাপ ডেভেলপার',
+    't-tag3': 'English Honours',
+    't-tag4': 'বাগ হান্টার',
+    't-tag5': 'পশ্চিমবঙ্গ, ভারত',
+    't-name': 'আকাশ',
+    't-dt1': 'জাতীয়তা', 't-dd1': 'ভারতীয়',
+    't-dt2': 'পেশা', 't-dd2': 'ফ্রিল্যান্স ওয়েব ডিজাইনার ও অ্যাপ ডেভেলপার',
+    't-dt3': 'শিক্ষা', 't-dd3': 'English Honours (চলমান)',
+    't-dt4': 'পরিচিতির কারণ', 't-dd4': "NASA-এর অফিসিয়াল ওয়েবসাইটে একটি নিরাপত্তা-বাগ খুঁজে রিপোর্ট করা",
+    't-dt5': 'পদ্ধতি', 't-dd5': 'স্বশিক্ষিত',
+    't-link1': 'SkyLink Esports (অ্যাপ)',
+    't-h-about': 'পরিচিতি',
+    't-p-about': 'আকাশ একজন undergraduate ছাত্র — English Honours নিয়ে পড়ছে, পাশাপাশি ওয়েব-জগতে চালিয়ে যাচ্ছে সমান্তরাল আরেকটা জীবন। দিনের বেলা সে ছাত্র; বাকি সময়টায় ক্লায়েন্টদের ওয়েবসাইট ডিজাইন ও নির্মাণ করে, নিজস্ব অ্যাপ বানায়। নিজের ভাষায় সে introvert — ভিড়ের চেয়ে বই আর কোডের সঙ্গেই বেশি আরামদায়ক, আর ব্যাপারটা নিয়ে তার মনে কোনো দ্বিধা নেই।',
+    't-quote': 'একটা ভালো বাগ রিপোর্ট আর একটা ভালো প্রবন্ধ আসলে একই কারিগরি — জটিল জিনিসটাকে সহজ করে বলা।',
+    't-h-work': 'কাজ',
+    't-p-work': 'ক্লায়েন্টদের ওয়েবসাইট আর নিজস্ব অ্যাপ — ডিজাইন থেকে তৈরি করে deploy পর্যন্ত, পুরোটাই নিজের হাতে।',
+    't-tag-work': 'অ্যাপ · লাইভ',
+    't-p-skylink': 'একটি Free Fire টুর্নামেন্ট প্ল্যাটফর্ম — রেজিস্ট্রেশন, টুর্নামেন্ট ম্যানেজমেন্ট ও পেমেন্ট সামলায়; শুরু থেকে শেষ পর্যন্ত নিজে তৈরি ও deploy করা।',
+    't-go': 'অ্যাপ দেখুন →',
+    't-h-bg': 'ব্যাকগ্রাউন্ড',
+    't-bg1': 'মধ্যবিত্ত পরিবারে বেড়ে ওঠা — কম্পিউটার ছিল ভাগ করে ব্যবহার করা এক দুর্লভ জিনিস, ঠিক স্কুলের কম্পিউটার ল্যাব-টার মতোই।',
+    't-bg2': 'স্কুলজীবন জুড়ে ধারাবাহিকভাবে class topper — যদিও নম্বরের চেয়ে ল্যাবে কাটানো সময়টাই বেশি দামি ছিল তার কাছে।',
+    't-bg3': 'English Honours নিজের ইচ্ছায় বেছে নিয়েছে; সাহিত্য আর প্রযুক্তিকে কখনোই দুটো আলাদা ঘর মনে করেনি।',
+    't-bg4': 'কোনো formal কম্পিউটার ট্রেনিং নেই — ডকুমেন্টেশন, টিউটোরিয়াল আর রাত জাগানো ট্রায়াল-অ্যান্ড-এররেই সব শিখেছে একা একা।',
+    't-h-sec': 'নিরাপত্তা-সংক্রান্ত কাজ',
+    't-p-sec1': 'কৌতূহলের শুরুটা ছিল একটা সহজ প্রশ্ন দিয়ে: <em>একটা ওয়েবসাইট আসলে কীভাবে কাজ করে?</em> উত্তর খুঁজতে গিয়ে HTML আর JavaScript শেখা একসময় আরও কঠিন একটা প্রশ্নে নিয়ে দাঁড়াল — <em>ওয়েবসাইট নিঃশব্দে কোথায় ভেঙে পড়ে?</em>',
+    't-sec1': "NASA-এর অফিসিয়াল ওয়েবসাইটে একটি নিরাপত্তা-বাগ খুঁজে তাদের Vulnerability Disclosure Program-এর মাধ্যমে দায়িত্বশীলভাবে রিপোর্ট করেছে।",
+    't-sec2': 'এরপর আরও কয়েকটি international ওয়েবসাইটে vulnerability রিপোর্ট করেছে, সংশ্লিষ্ট সংস্থাগুলোর কাছ থেকে স্বীকৃতিও পেয়েছে।',
+    't-sec3': 'কাজের পদ্ধতি ধীর ও ধীরস্থির — কিছু ছোঁয়ার আগে ঘণ্টার পর ঘণ্টা টার্গেট সাইটটা পড়ে, ঠিক যেভাবে ছোটগল্প পড়ে: খুঁটিয়ে, একবার নয় বারবার।',
+    't-h-res': 'গবেষণা ও পাঠ',
+    't-res1': 'বর্তমান গবেষণা সাহিত্য আর প্রযুক্তির সংযোগস্থলে — ভাষাকে নিজেই একটা সিস্টেম হিসেবে দেখা, যার নিয়মগুলো বের করা যায়।',
+    't-res2': 'অবসর কাটে প্রায় পুরোটাই পড়ায় — উপন্যাস, প্রবন্ধ আর টেকনিক্যাল লেখা একই তাকে থাকে।',
+    't-res3': 'দীর্ঘমেয়াদি লক্ষ্য সংযত আর সুনির্দিষ্ট — নিঃশব্দে বানিয়ে চলা, সাবধানে রিপোর্ট করা, আর কাজকেই নিজের কথা বলতে দেওয়া।',
+    't-copy': '© ২০২৬ আকাশ',
+    't-updated': 'সর্বশেষ হালনাগাদ: অক্টোবর ২০২৬'
+  };
+
+  var KEY = 'site-lang';
+  var titles = {
+    en: 'Akash — Web Designer · App Developer · Bug Hunter',
+    bn: 'আকাশ — ওয়েব ডিজাইনার · অ্যাপ ডেভেলপার · বাগ হান্টার'
+  };
+
+  function apply(lang) {
+    var isBn = (lang === 'bn');
+    document.documentElement.lang = isBn ? 'bn' : 'en';
+    document.body.classList.toggle('bn', isBn);
+    document.title = isBn ? titles.bn : titles.en;
+    for (var id in bn) {
+      if (!Object.prototype.hasOwnProperty.call(bn, id)) continue;
+      var el = document.getElementById(id);
+      if (!el) continue;
+      if (isBn) {
+        if (!el.hasAttribute('data-en')) el.setAttribute('data-en', el.innerHTML);
+        el.innerHTML = bn[id];
+      } else {
+        var saved = el.getAttribute('data-en');
+        if (saved !== null && saved !== '') el.innerHTML = saved;
+      }
+    }
+    var btn = document.getElementById('langToggle');
+    if (btn) btn.textContent = isBn ? 'English' : 'বাংলা';
+    try { localStorage.setItem(KEY, lang); } catch (e) {}
+  }
+
+  var btn = document.getElementById('langToggle');
+  if (btn) {
+    btn.addEventListener('click', function () {
+      var cur = 'en';
+      try { cur = localStorage.getItem(KEY) || 'en'; } catch (e) {}
+      apply(cur === 'bn' ? 'en' : 'bn');
+    });
+  }
+
+  var saved = 'en';
+  try { saved = localStorage.getItem(KEY) || 'en'; } catch (e) {}
+  if (saved === 'bn') apply('bn');
+
+  var navLinks = document.querySelectorAll('nav a[href^="#"]');
+  for (var i = 0; i < navLinks.length; i++) {
+    (function (a) {
+      a.addEventListener('click', function (e) {
+        var t = document.querySelector(a.getAttribute('href'));
+        if (t) {
+          e.preventDefault();
+          t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', a.getAttribute('href'));
+        }
+      });
+    })(navLinks[i]);
+  }
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      for (var j = 0; j < entries.length; j++) {
+        if (entries[j].isIntersecting) {
+          entries[j].target.classList.add('in');
+          io.unobserve(entries[j].target);
+        }
+      }
+    }, { threshold: 0.08 });
+    var revs = document.querySelectorAll('.reveal');
+    for (var k = 0; k < revs.length; k++) io.observe(revs[k]);
+  } else {
+    var revs2 = document.querySelectorAll('.reveal');
+    for (var m = 0; m < revs2.length; m++) revs2[m].classList.add('in');
+  }
+})();
+</script>
+
+</body>
+</html>
