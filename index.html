@@ -70,7 +70,12 @@
   aside { position: relative; }
   aside .inner { position: sticky; top: 88px; }
   .identity { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--wash); }
-  .identity .photo { display: block; width: 100%; height: auto; }
+  .identity .photo {
+    display: block; width: 100%;
+    aspect-ratio: 6 / 5;
+    object-fit: cover;
+    object-position: center 28%;
+  }
   .identity .body { padding: 18px 20px; }
   .identity .name { font-weight: 600; font-size: 15px; }
   .identity dl { margin-top: 12px; }
@@ -119,6 +124,12 @@
     display: flex; justify-content: space-between; font-size: 12.5px; color: var(--soft);
   }
 
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
   @media (max-width: 720px) {
     nav ul { display: none; }
     .nav-right { gap: 0; }
@@ -146,9 +157,9 @@
   </nav>
 
   <div class="hero">
-    <h1 id="t-hero">Websites for clients.<br>Apps of my own. Bugs on the side.</h1>
-    <p class="lede" id="t-lede">I'm Akash â€” an English Honours student who designs and builds websites for clients, develops apps, and spends his quieter hours finding security bugs in places they shouldn't be. It all started in a school computer lab.</p>
-    <div class="meta">
+    <h1 id="t-hero" class="reveal">Websites for clients.<br>Apps of my own. Bugs on the side.</h1>
+    <p class="lede reveal" id="t-lede">I'm Akash â€” an English Honours student who designs and builds websites for clients, develops apps, and spends his quieter hours finding security bugs in places they shouldn't be. It all started in a school computer lab.</p>
+    <div class="meta reveal">
       <span id="t-tag1">Web Designer</span>
       <span id="t-tag2">App Developer</span>
       <span id="t-tag3">English Honours</span>
@@ -161,7 +172,7 @@
 
     <aside>
       <div class="inner">
-        <div class="identity">
+        <div class="identity reveal">
           <img class="photo" src="photo.png" alt="Photo of Akash">
           <div class="body">
             <div class="name" id="t-name">Akash</div>
@@ -179,7 +190,7 @@
             </dl>
           </div>
         </div>
-        <div class="elsewhere">
+        <div class="elsewhere reveal">
           <a href="mailto:akash115251x@gmail.com">akash115251x@gmail.com</a>
           <a href="https://github.com/AkashYT94" target="_blank" rel="noopener">GitHub â€” @AkashYT94</a>
           <a href="https://skylink-esports.onrender.com/" target="_blank" rel="noopener" id="t-link1">SkyLink Esports (app)</a>
@@ -188,7 +199,7 @@
     </aside>
 
     <article>
-      <section id="about">
+      <section id="about" class="reveal">
         <h2 id="t-h-about">About</h2>
         <p id="t-p-about">Akash is an undergraduate reading for a degree in English Honours while running a parallel life on the web. By day he's a student; the rest of the time he designs and builds websites for clients and develops apps of his own. He is, by his own description, an introvert â€” more comfortable in the company of books and code listings than of crowds, and entirely at peace with that.</p>
         <div class="pull">
@@ -196,7 +207,7 @@
         </div>
       </section>
 
-      <section id="work">
+      <section id="work" class="reveal">
         <h2 id="t-h-work">Work</h2>
         <p id="t-p-work">Client websites and independent apps â€” designed, built, and shipped end to end.</p>
         <a class="project" href="https://skylink-esports.onrender.com/" target="_blank" rel="noopener">
@@ -207,7 +218,7 @@
         </a>
       </section>
 
-      <section id="background">
+      <section id="background" class="reveal">
         <h2 id="t-h-bg">Background</h2>
         <ul>
           <li id="t-bg1">Grew up in a middle-class household where a computer was a shared, precious thing â€” the school lab, specifically.</li>
@@ -217,7 +228,7 @@
         </ul>
       </section>
 
-      <section id="security">
+      <section id="security" class="reveal">
         <h2 id="t-h-sec">Security Work</h2>
         <p id="t-p-sec1">The curiosity started with a simple question: <em>how does a website actually work?</em> Learning HTML and JavaScript to answer it eventually led to a harder question â€” <em>where does a website quietly break?</em></p>
         <ul>
@@ -227,7 +238,7 @@
         </ul>
       </section>
 
-      <section id="research">
+      <section id="research" class="reveal">
         <h2 id="t-h-res">Research &amp; Reading</h2>
         <ul>
           <li id="t-res1">Current research sits where literature and technology overlap â€” treating language itself as a system with rules worth uncovering.</li>
@@ -341,6 +352,17 @@
       }
     });
   });
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+  }
 })();
 </script>
 
