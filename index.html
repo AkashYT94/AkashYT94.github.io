@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akash — Web Designer · App Developer · Bug Hunter</title>
+<title>Akash â€” Web Designer Â· App Developer Â· Bug Hunter</title>
 <meta name="description" content="Akash designs websites for clients and builds apps, alongside English Honours studies and independent security research.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,13 +82,14 @@
     border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
     background: var(--wash);
   }
-  /* crop window: shows top 4:3 slice of the photo, hides the bottom (watermark) */
+  /* crop window: light crop â€” small trim from top, watermark trimmed from bottom */
   .identity .photo-wrap {
-    width: 100%; aspect-ratio: 4 / 3; overflow: hidden;
+    width: 100%; aspect-ratio: 6 / 5; overflow: hidden;
     background: var(--wash);
   }
   .identity .photo {
-    display: block; width: 100%; height: auto;
+    display: block; width: 100%; height: 100%;
+    object-fit: cover; object-position: center 25%;
   }
   .identity .body { padding: 18px 20px; }
   .identity .name { font-weight: 600; font-size: 15px; }
@@ -115,7 +116,7 @@
     border-bottom: 1px solid var(--line); color: #262c33; font-size: 15px;
   }
   article li:last-child { border-bottom: none; }
-  article li::before { content: "—"; position: absolute; left: 0; color: var(--soft); }
+  article li::before { content: "â€”"; position: absolute; left: 0; color: var(--soft); }
 
   /* project card */
   .project {
@@ -150,7 +151,7 @@
     font-size: 12.5px; color: var(--soft);
   }
 
-  /* reveal on scroll — JS-gated so content is never hidden without JS */
+  /* reveal on scroll â€” JS-gated so content is never hidden without JS */
   .js .rv { opacity: 0; transform: translateY(10px);
     transition: opacity .6s ease, transform .6s ease; }
   .js .rv.in { opacity: 1; transform: none; }
@@ -165,37 +166,36 @@
 </style>
 </head>
 <body>
-
 <div class="shell">
 
   <nav>
-    <div class="wordmark" data-en="Akash" data-bn="আকাশ">Akash</div>
+    <div class="wordmark" data-en="Akash" data-bn="à¦†à¦•à¦¾à¦¶">Akash</div>
     <div class="nav-right">
       <ul>
-        <li><a href="#about" data-en="About" data-bn="পরিচিতি">About</a></li>
-        <li><a href="#work" data-en="Work" data-bn="কাজ">Work</a></li>
-        <li><a href="#security" data-en="Security" data-bn="নিরাপত্তা">Security</a></li>
-        <li><a href="#research" data-en="Research" data-bn="গবেষণা">Research</a></li>
+        <li><a href="#about" data-en="About" data-bn="à¦ªà¦°à¦¿à¦šà¦¿à¦¤à¦¿">About</a></li>
+        <li><a href="#work" data-en="Work" data-bn="à¦•à¦¾à¦œ">Work</a></li>
+        <li><a href="#security" data-en="Security" data-bn="à¦¨à¦¿à¦°à¦¾à¦ªà¦¤à§à¦¤à¦¾">Security</a></li>
+        <li><a href="#research" data-en="Research" data-bn="à¦—à¦¬à§‡à¦·à¦£à¦¾">Research</a></li>
       </ul>
-      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch language">বাংলা</button>
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch language">à¦¬à¦¾à¦‚à¦²à¦¾</button>
     </div>
   </nav>
 
   <div class="hero">
     <h1 data-en="Websites for clients.<br>Apps of my own. Bugs on the side."
-        data-bn="ক্লায়েন্টদের জন্য ওয়েবসাইট।<br>নিজের বানানো অ্যাপ। পাশে বাগ হান্টিং।">Websites for clients.<br>Apps of my own. Bugs on the side.</h1>
+        data-bn="à¦•à§à¦²à¦¾à¦¯à¦¼à§‡à¦¨à§à¦Ÿà¦¦à§‡à¦° à¦œà¦¨à§à¦¯ à¦“à¦¯à¦¼à§‡à¦¬à¦¸à¦¾à¦‡à¦Ÿà¥¤<br>à¦¨à¦¿à¦œà§‡à¦° à¦¬à¦¾à¦¨à¦¾à¦¨à§‹ à¦…à§à¦¯à¦¾à¦ªà¥¤ à¦ªà¦¾à¦¶à§‡ à¦¬à¦¾à¦— à¦¹à¦¾à¦¨à§à¦Ÿà¦¿à¦‚à¥¤">Websites for clients.<br>Apps of my own. Bugs on the side.</h1>
     <p class="lede"
-       data-en="I'm Akash — an English Honours student who designs and builds websites for clients, develops apps, and spends his quieter hours finding security bugs in places they shouldn't be. It all started in a school computer lab."
-       data-bn="আমি আকাশ — English Honours-এর ছাত্র। পাশাপাশি ক্লায়েন্টদের জন্য ওয়েবসাইট ডিজাইন ও তৈরি করি, নিজস্ব অ্যাপ বানাই, আর অবসরের সময়ে নানা ওয়েবসাইটে নিরাপত্তা-বাগ খুঁজে বের করি। এই যাত্রা শুরু হয়েছিল স্কুলের কম্পিউটার ল্যাব থেকে।">
-       I'm Akash — an English Honours student who designs and builds websites
+       data-en="I'm Akash â€” an English Honours student who designs and builds websites for clients, develops apps, and spends his quieter hours finding security bugs in places they shouldn't be. It all started in a school computer lab."
+       data-bn="à¦†à¦®à¦¿ à¦†à¦•à¦¾à¦¶ â€” English Honours-à¦à¦° à¦›à¦¾à¦¤à§à¦°à¥¤ à¦ªà¦¾à¦¶à¦¾à¦ªà¦¾à¦¶à¦¿ à¦•à§à¦²à¦¾à¦¯à¦¼à§‡à¦¨à§à¦Ÿà¦¦à§‡à¦° à¦œà¦¨à§à¦¯ à¦“à¦¯à¦¼à§‡à¦¬à¦¸à¦¾à¦‡à¦Ÿ à¦¡à¦¿à¦œà¦¾à¦‡à¦¨ à¦“ à¦¤à§ˆà¦°à¦¿ à¦•à¦°à¦¿, à¦¨à¦¿à¦œà¦¸à§à¦¬ à¦…à§à¦¯à¦¾à¦ª à¦¬à¦¾à¦¨à¦¾à¦‡, à¦†à¦° à¦…à¦¬à¦¸à¦°à§‡à¦° à¦¸à¦®à¦¯à¦¼à§‡ à¦¨à¦¾à¦¨à¦¾ à¦“à¦¯à¦¼à§‡à¦¬à¦¸à¦¾à¦‡à¦Ÿà§‡ à¦¨à¦¿à¦°à¦¾à¦ªà¦¤à§à¦¤à¦¾-à¦¬à¦¾à¦— à¦–à§à¦à¦œà§‡ à¦¬à§‡à¦° à¦•à¦°à¦¿à¥¤ à¦à¦‡ à¦¯à¦¾à¦¤à§à¦°à¦¾ à¦¶à§à¦°à§ à¦¹à¦¯à¦¼à§‡à¦›à¦¿à¦² à¦¸à§à¦•à§à¦²à§‡à¦° à¦•à¦®à§à¦ªà¦¿à¦‰à¦Ÿà¦¾à¦° à¦²à§à¦¯à¦¾à¦¬ à¦¥à§‡à¦•à§‡à¥¤">
+       I'm Akash â€” an English Honours student who designs and builds websites
        for clients, develops apps, and spends his quieter hours finding security bugs in
        places they shouldn't be. It all started in a school computer lab.</p>
     <div class="meta">
-      <span data-en="Web Designer" data-bn="ওয়েব ডিজাইনার">Web Designer</span>
-      <span data-en="App Developer" data-bn="অ্যাপ ডেভেলপার">App Developer</span>
+      <span data-en="Web Designer" data-bn="à¦“à¦¯à¦¼à§‡à¦¬ à¦¡à¦¿à¦œà¦¾à¦‡à¦¨à¦¾à¦°">Web Designer</span>
+      <span data-en="App Developer" data-bn="à¦…à§à¦¯à¦¾à¦ª à¦¡à§‡à¦­à§‡à¦²à¦ªà¦¾à¦°">App Developer</span>
       <span data-en="English Honours" data-bn="English Honours">English Honours</span>
-      <span data-en="Bug Hunter" data-bn="বাগ হান্টার">Bug Hunter</span>
-      <span data-en="West Bengal, India" data-bn="পশ্চিমবঙ্গ, ভারত">West Bengal, India</span>
+      <span data-en="Bug Hunter" data-bn="à¦¬à¦¾à¦— à¦¹à¦¾à¦¨à§à¦Ÿà¦¾à¦°">Bug Hunter</span>
+      <span data-en="West Bengal, India" data-bn="à¦ªà¦¶à§à¦šà¦¿à¦®à¦¬à¦™à§à¦—, à¦­à¦¾à¦°à¦¤">West Bengal, India</span>
     </div>
   </div>
 
@@ -208,25 +208,25 @@
             <img class="photo" src="photo.jpg" alt="Photo of Akash">
           </div>
           <div class="body">
-            <div class="name" data-en="Akash" data-bn="আকাশ">Akash</div>
+            <div class="name" data-en="Akash" data-bn="à¦†à¦•à¦¾à¦¶">Akash</div>
             <dl>
-              <dt data-en="Nationality" data-bn="জাতীয়তা">Nationality</dt>
-              <dd data-en="Indian" data-bn="ভারতীয়">Indian</dd>
-              <dt data-en="Occupation" data-bn="পেশা">Occupation</dt>
-              <dd data-en="Freelance web designer &amp; app developer" data-bn="ফ্রিল্যান্স ওয়েব ডিজাইনার ও অ্যাপ ডেভেলপার">Freelance web designer &amp; app developer</dd>
-              <dt data-en="Education" data-bn="শিক্ষা">Education</dt>
-              <dd data-en="English Honours (ongoing)" data-bn="English Honours (চলমান)">English Honours (ongoing)</dd>
-              <dt data-en="Known for" data-bn="পরিচিতি">Known for</dt>
-              <dd data-en="Reporting a bug on NASA's official website" data-bn="NASA-এর অফিসিয়াল ওয়েবসাইটে বাগ রিপোর্ট করা">Reporting a bug on NASA's official website</dd>
-              <dt data-en="Approach" data-bn="পদ্ধতি">Approach</dt>
-              <dd data-en="Self-taught" data-bn="স্বশিক্ষিত">Self-taught</dd>
+              <dt data-en="Nationality" data-bn="à¦œà¦¾à¦¤à§€à¦¯à¦¼à¦¤à¦¾">Nationality</dt>
+              <dd data-en="Indian" data-bn="à¦­à¦¾à¦°à¦¤à§€à¦¯à¦¼">Indian</dd>
+              <dt data-en="Occupation" data-bn="à¦ªà§‡à¦¶à¦¾">Occupation</dt>
+              <dd data-en="Freelance web designer &amp; app developer" data-bn="à¦«à§à¦°à¦¿à¦²à§à¦¯à¦¾à¦¨à§à¦¸ à¦“à¦¯à¦¼à§‡à¦¬ à¦¡à¦¿à¦œà¦¾à¦‡à¦¨à¦¾à¦° à¦“ à¦…à§à¦¯à¦¾à¦ª à¦¡à§‡à¦­à§‡à¦²à¦ªà¦¾à¦°">Freelance web designer &amp; app developer</dd>
+              <dt data-en="Education" data-bn="à¦¶à¦¿à¦•à§à¦·à¦¾">Education</dt>
+              <dd data-en="English Honours (ongoing)" data-bn="English Honours (à¦šà¦²à¦®à¦¾à¦¨)">English Honours (ongoing)</dd>
+              <dt data-en="Known for" data-bn="à¦ªà¦°à¦¿à¦šà¦¿à¦¤à¦¿">Known for</dt>
+              <dd data-en="Reporting a bug on NASA's official website" data-bn="NASA-à¦à¦° à¦…à¦«à¦¿à¦¸à¦¿à¦¯à¦¼à¦¾à¦² à¦“à¦¯à¦¼à§‡à¦¬à¦¸à¦¾à¦‡à¦Ÿà§‡ à¦¬à¦¾à¦— à¦°à¦¿à¦ªà§‹à¦°à§à¦Ÿ à¦•à¦°à¦¾">Reporting a bug on NASA's official website</dd>
+              <dt data-en="Approach" data-bn="à¦ªà¦¦à§à¦§à¦¤à¦¿">Approach</dt>
+              <dd data-en="Self-taught" data-bn="à¦¸à§à¦¬à¦¶à¦¿à¦•à§à¦·à¦¿à¦¤">Self-taught</dd>
             </dl>
           </div>
         </div>
         <div class="elsewhere rv">
           <a href="mailto:akash115251x@gmail.com">akash115251x@gmail.com</a>
-          <a href="https://github.com/AkashYT94" target="_blank" rel="noopener">GitHub — @AkashYT94</a>
-          <a href="https://skylink-esports.onrender.com/" target="_blank" rel="noopener" data-en="SkyLink Esports (app)" data-bn="SkyLink Esports (অ্যাপ)">SkyLink Esports (app)</a>
+          <a href="https://github.com/AkashYT94" target="_blank" rel="noopener">GitHub â€” @AkashYT94</a>
+          <a href="https://skylink-esports.onrender.com/" target="_blank" rel="noopener" data-en="SkyLink Esports (app)" data-bn="SkyLink Esports (à¦…à§à¦¯à¦¾à¦ª)">SkyLink Esports (app)</a>
         </div>
       </div>
     </aside>
@@ -234,78 +234,78 @@
     <article>
 
       <section id="about" class="rv">
-        <h2 data-en="About" data-bn="পরিচিতি">About</h2>
-        <p data-en="Akash is an undergraduate reading for a degree in English Honours while running a parallel life on the web. By day he's a student; the rest of the time he designs and builds websites for clients and develops apps of his own. He is, by his own description, an introvert — more comfortable in the company of books and code listings than of crowds, and entirely at peace with that."
-           data-bn="আকাশ একজন undergraduate ছাত্র — English Honours নিয়ে পড়ছে, পাশাপাশি ওয়েব-জগতে চালিয়ে যাচ্ছে সমান্তরাল আরেকটা জীবন। দিনের বেলা সে ছাত্র; বাকি সময়টায় ক্লায়েন্টদের ওয়েবসাইট ডিজাইন ও নির্মাণ করে, নিজস্ব অ্যাপ বানায়। নিজের ভাষায় সে introvert — ভিড়ের চেয়ে বই আর কোডের সঙ্গেই বেশি আরামদায়ক, আর ব্যাপারটা নিয়ে তার মনে কোনো দ্বিধা নেই।">
+        <h2 data-en="About" data-bn="à¦ªà¦°à¦¿à¦šà¦¿à¦¤à¦¿">About</h2>
+        <p data-en="Akash is an undergraduate reading for a degree in English Honours while running a parallel life on the web. By day he's a student; the rest of the time he designs and builds websites for clients and develops apps of his own. He is, by his own description, an introvert â€” more comfortable in the company of books and code listings than of crowds, and entirely at peace with that."
+           data-bn="à¦†à¦•à¦¾à¦¶ à¦à¦•à¦œà¦¨ undergraduate à¦›à¦¾à¦¤à§à¦° â€” English Honours à¦¨à¦¿à¦¯à¦¼à§‡ à¦ªà¦¡à¦¼à¦›à§‡, à¦ªà¦¾à¦¶à¦¾à¦ªà¦¾à¦¶à¦¿ à¦“à¦¯à¦¼à§‡à¦¬-à¦œà¦—à¦¤à§‡ à¦šà¦¾à¦²à¦¿à¦¯à¦¼à§‡ à¦¯à¦¾à¦šà§à¦›à§‡ à¦¸à¦®à¦¾à¦¨à§à¦¤à¦°à¦¾à¦² à¦†à¦°à§‡à¦•à¦Ÿà¦¾ à¦œà§€à¦¬à¦¨à¥¤ à¦¦à¦¿à¦¨à§‡à¦° à¦¬à§‡à¦²à¦¾ à¦¸à§‡ à¦›à¦¾à¦¤à§à¦°; à¦¬à¦¾à¦•à¦¿ à¦¸à¦®à¦¯à¦¼à¦Ÿà¦¾à¦¯à¦¼ à¦•à§à¦²à¦¾à¦¯à¦¼à§‡à¦¨à§à¦Ÿà¦¦à§‡à¦° à¦“à¦¯à¦¼à§‡à¦¬à¦¸à¦¾à¦‡à¦Ÿ à¦¡à¦¿à¦œà¦¾à¦‡à¦¨ à¦“ à¦¨à¦¿à¦°à§à¦®à¦¾à¦£ à¦•à¦°à§‡, à¦¨à¦¿à¦œà¦¸à§à¦¬ à¦…à§à¦¯à¦¾à¦ª à¦¬à¦¾à¦¨à¦¾à¦¯à¦¼à¥¤ à¦¨à¦¿à¦œà§‡à¦° à¦­à¦¾à¦·à¦¾à¦¯à¦¼ à¦¸à§‡ introvert â€” à¦­à¦¿à¦¡à¦¼à§‡à¦° à¦šà§‡à¦¯à¦¼à§‡ à¦¬à¦‡ à¦†à¦° à¦•à§‹à¦¡à§‡à¦° à¦¸à¦™à§à¦—à§‡à¦‡ à¦¬à§‡à¦¶à¦¿ à¦†à¦°à¦¾à¦®à¦¦à¦¾à¦¯à¦¼à¦•, à¦†à¦° à¦¬à§à¦¯à¦¾à¦ªà¦¾à¦°à¦Ÿà¦¾ à¦¨à¦¿à¦¯à¦¼à§‡ à¦¤à¦¾à¦° à¦®à¦¨à§‡ à¦•à§‹à¦¨à§‹ à¦¦à§à¦¬à¦¿à¦§à¦¾ à¦¨à§‡à¦‡à¥¤">
            Akash is an undergraduate reading for a degree in English Honours while
            running a parallel life on the web. By day he's a student; the rest of the time
            he designs and builds websites for clients and develops apps of his own. He is,
-           by his own description, an introvert — more comfortable in the company of books
+           by his own description, an introvert â€” more comfortable in the company of books
            and code listings than of crowds, and entirely at peace with that.</p>
         <div class="pull">
           <p data-en="A good bug report and a good essay are the same craft: taking something complicated and saying it simply."
-             data-bn="একটা ভালো বাগ রিপোর্ট আর একটা ভালো প্রবন্ধ আসলে একই কারিগরি — জটিল জিনিসটাকে সহজ করে বলা।">
+             data-bn="à¦à¦•à¦Ÿà¦¾ à¦­à¦¾à¦²à§‹ à¦¬à¦¾à¦— à¦°à¦¿à¦ªà§‹à¦°à§à¦Ÿ à¦†à¦° à¦à¦•à¦Ÿà¦¾ à¦­à¦¾à¦²à§‹ à¦ªà§à¦°à¦¬à¦¨à§à¦§ à¦†à¦¸à¦²à§‡ à¦à¦•à¦‡ à¦•à¦¾à¦°à¦¿à¦—à¦°à¦¿ â€” à¦œà¦Ÿà¦¿à¦² à¦œà¦¿à¦¨à¦¿à¦¸à¦Ÿà¦¾à¦•à§‡ à¦¸à¦¹à¦œ à¦•à¦°à§‡ à¦¬à¦²à¦¾à¥¤">
              A good bug report and a good essay are the same craft:
              taking something complicated and saying it simply.</p>
         </div>
       </section>
 
       <section id="work" class="rv">
-        <h2 data-en="Work" data-bn="কাজ">Work</h2>
-        <p data-en="Client websites and independent apps — designed, built, and shipped end to end."
-           data-bn="ক্লায়েন্টদের ওয়েবসাইট আর নিজস্ব অ্যাপ — ডিজাইন থেকে তৈরি করে deploy পর্যন্ত, পুরোটাই নিজের হাতে।">
-           Client websites and independent apps — designed, built, and shipped end to end.</p>
+        <h2 data-en="Work" data-bn="à¦•à¦¾à¦œ">Work</h2>
+        <p data-en="Client websites and independent apps â€” designed, built, and shipped end to end."
+           data-bn="à¦•à§à¦²à¦¾à¦¯à¦¼à§‡à¦¨à§à¦Ÿà¦¦à§‡à¦° à¦“à¦¯à¦¼à§‡à¦¬à¦¸à¦¾à¦‡à¦Ÿ à¦†à¦° à¦¨à¦¿à¦œà¦¸à§à¦¬ à¦…à§à¦¯à¦¾à¦ª â€” à¦¡à¦¿à¦œà¦¾à¦‡à¦¨ à¦¥à§‡à¦•à§‡ à¦¤à§ˆà¦°à¦¿ à¦•à¦°à§‡ deploy à¦ªà¦°à§à¦¯à¦¨à§à¦¤, à¦ªà§à¦°à§‹à¦Ÿà¦¾à¦‡ à¦¨à¦¿à¦œà§‡à¦° à¦¹à¦¾à¦¤à§‡à¥¤">
+           Client websites and independent apps â€” designed, built, and shipped end to end.</p>
         <a class="project" href="https://skylink-esports.onrender.com/" target="_blank" rel="noopener">
-          <span class="tag" data-en="App · Live" data-bn="অ্যাপ · লাইভ">App · Live</span>
+          <span class="tag" data-en="App Â· Live" data-bn="à¦…à§à¦¯à¦¾à¦ª Â· à¦²à¦¾à¦‡à¦­">App Â· Live</span>
           <h3>SkyLink Esports</h3>
-          <p data-en="A Free Fire tournament platform — handles sign-ups, tournament management, and payments, built and deployed end to end."
-             data-bn="একটি Free Fire টুর্নামেন্ট প্ল্যাটফর্ম — রেজিস্ট্রেশন, টুর্নামেন্ট ম্যানেজমেন্ট ও পেমেন্ট সামলায়; শুরু থেকে শেষ পর্যন্ত নিজে তৈরি ও deploy করা।">
-             A Free Fire tournament platform — handles sign-ups, tournament management,
+          <p data-en="A Free Fire tournament platform â€” handles sign-ups, tournament management, and payments, built and deployed end to end."
+             data-bn="à¦à¦•à¦Ÿà¦¿ Free Fire à¦Ÿà§à¦°à§à¦¨à¦¾à¦®à§‡à¦¨à§à¦Ÿ à¦ªà§à¦²à§à¦¯à¦¾à¦Ÿà¦«à¦°à§à¦® â€” à¦°à§‡à¦œà¦¿à¦¸à§à¦Ÿà§à¦°à§‡à¦¶à¦¨, à¦Ÿà§à¦°à§à¦¨à¦¾à¦®à§‡à¦¨à§à¦Ÿ à¦®à§à¦¯à¦¾à¦¨à§‡à¦œà¦®à§‡à¦¨à§à¦Ÿ à¦“ à¦ªà§‡à¦®à§‡à¦¨à§à¦Ÿ à¦¸à¦¾à¦®à¦²à¦¾à¦¯à¦¼; à¦¶à§à¦°à§ à¦¥à§‡à¦•à§‡ à¦¶à§‡à¦· à¦ªà¦°à§à¦¯à¦¨à§à¦¤ à¦¨à¦¿à¦œà§‡ à¦¤à§ˆà¦°à¦¿ à¦“ deploy à¦•à¦°à¦¾à¥¤">
+             A Free Fire tournament platform â€” handles sign-ups, tournament management,
              and payments, built and deployed end to end.</p>
-          <span class="go" data-en="Visit app →" data-bn="অ্যাপ দেখুন →">Visit app →</span>
+          <span class="go" data-en="Visit app â†’" data-bn="à¦…à§à¦¯à¦¾à¦ª à¦¦à§‡à¦–à§à¦¨ â†’">Visit app â†’</span>
         </a>
       </section>
 
       <section id="background" class="rv">
-        <h2 data-en="Background" data-bn="ব্যাকগ্রাউন্ড">Background</h2>
+        <h2 data-en="Background" data-bn="à¦¬à§à¦¯à¦¾à¦•à¦—à§à¦°à¦¾à¦‰à¦¨à§à¦¡">Background</h2>
         <ul>
-          <li data-en="Grew up in a middle-class household where a computer was a shared, precious thing — the school lab, specifically."
-              data-bn="মধ্যবিত্ত পরিবারে বেড়ে ওঠা — কম্পিউটার ছিল ভাগ করে ব্যবহার করা এক দুর্লভ জিনিস, ঠিক স্কুলের কম্পিউটার ল্যাব-টার মতোই।">Grew up in a middle-class household where a computer was a shared, precious thing — the school lab, specifically.</li>
+          <li data-en="Grew up in a middle-class household where a computer was a shared, precious thing â€” the school lab, specifically."
+              data-bn="à¦®à¦§à§à¦¯à¦¬à¦¿à¦¤à§à¦¤ à¦ªà¦°à¦¿à¦¬à¦¾à¦°à§‡ à¦¬à§‡à¦¡à¦¼à§‡ à¦“à¦ à¦¾ â€” à¦•à¦®à§à¦ªà¦¿à¦‰à¦Ÿà¦¾à¦° à¦›à¦¿à¦² à¦­à¦¾à¦— à¦•à¦°à§‡ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à¦¾ à¦à¦• à¦¦à§à¦°à§à¦²à¦­ à¦œà¦¿à¦¨à¦¿à¦¸, à¦ à¦¿à¦• à¦¸à§à¦•à§à¦²à§‡à¦° à¦•à¦®à§à¦ªà¦¿à¦‰à¦Ÿà¦¾à¦° à¦²à§à¦¯à¦¾à¦¬-à¦Ÿà¦¾à¦° à¦®à¦¤à§‹à¦‡à¥¤">Grew up in a middle-class household where a computer was a shared, precious thing â€” the school lab, specifically.</li>
           <li data-en="A consistent class topper through school, though the lab hours mattered more than the marks."
-              data-bn="স্কুলজীবন জুড়ে ধারাবাহিকভাবে class topper — যদিও নম্বরের চেয়ে ল্যাবে কাটানো সময়টাই বেশি দামি ছিল তার কাছে।">A consistent class topper through school, though the lab hours mattered more than the marks.</li>
+              data-bn="à¦¸à§à¦•à§à¦²à¦œà§€à¦¬à¦¨ à¦œà§à¦¡à¦¼à§‡ à¦§à¦¾à¦°à¦¾à¦¬à¦¾à¦¹à¦¿à¦•à¦­à¦¾à¦¬à§‡ class topper â€” à¦¯à¦¦à¦¿à¦“ à¦¨à¦®à§à¦¬à¦°à§‡à¦° à¦šà§‡à¦¯à¦¼à§‡ à¦²à§à¦¯à¦¾à¦¬à§‡ à¦•à¦¾à¦Ÿà¦¾à¦¨à§‹ à¦¸à¦®à¦¯à¦¼à¦Ÿà¦¾à¦‡ à¦¬à§‡à¦¶à¦¿ à¦¦à¦¾à¦®à¦¿ à¦›à¦¿à¦² à¦¤à¦¾à¦° à¦•à¦¾à¦›à§‡à¥¤">A consistent class topper through school, though the lab hours mattered more than the marks.</li>
           <li data-en="Chose English Honours deliberately; never saw literature and technology as separate rooms."
-              data-bn="English Honours নিজের ইচ্ছায় বেছে নিয়েছে; সাহিত্য আর প্রযুক্তিকে কখনোই দুটো আলাদা ঘর মনে করেনি।">Chose English Honours deliberately; never saw literature and technology as separate rooms.</li>
-          <li data-en="No formal computer training — everything technical was learned alone, from documentation, tutorials, and long nights of trial and error."
-              data-bn="কোনো formal কম্পিউটার ট্রেনিং নেই — ডকুমেন্টেশন, টিউটোরিয়াল আর রাত জাগানো ট্রায়াল-অ্যান্ড-এররেই সব শিখেছে একা একা।">No formal computer training — everything technical was learned alone, from documentation, tutorials, and long nights of trial and error.</li>
+              data-bn="English Honours à¦¨à¦¿à¦œà§‡à¦° à¦‡à¦šà§à¦›à¦¾à¦¯à¦¼ à¦¬à§‡à¦›à§‡ à¦¨à¦¿à¦¯à¦¼à§‡à¦›à§‡; à¦¸à¦¾à¦¹à¦¿à¦¤à§à¦¯ à¦†à¦° à¦ªà§à¦°à¦¯à§à¦•à§à¦¤à¦¿à¦•à§‡ à¦•à¦–à¦¨à§‹à¦‡ à¦¦à§à¦Ÿà§‹ à¦†à¦²à¦¾à¦¦à¦¾ à¦˜à¦° à¦®à¦¨à§‡ à¦•à¦°à§‡à¦¨à¦¿à¥¤">Chose English Honours deliberately; never saw literature and technology as separate rooms.</li>
+          <li data-en="No formal computer training â€” everything technical was learned alone, from documentation, tutorials, and long nights of trial and error."
+              data-bn="à¦•à§‹à¦¨à§‹ formal à¦•à¦®à§à¦ªà¦¿à¦‰à¦Ÿà¦¾à¦° à¦Ÿà§à¦°à§‡à¦¨à¦¿à¦‚ à¦¨à§‡à¦‡ â€” à¦¡à¦•à§à¦®à§‡à¦¨à§à¦Ÿà§‡à¦¶à¦¨, à¦Ÿà¦¿à¦‰à¦Ÿà§‹à¦°à¦¿à¦¯à¦¼à¦¾à¦² à¦†à¦° à¦°à¦¾à¦¤ à¦œà¦¾à¦—à¦¾à¦¨à§‹ à¦Ÿà§à¦°à¦¾à¦¯à¦¼à¦¾à¦²-à¦…à§à¦¯à¦¾à¦¨à§à¦¡-à¦à¦°à¦°à§‡à¦‡ à¦¸à¦¬ à¦¶à¦¿à¦–à§‡à¦›à§‡ à¦à¦•à¦¾ à¦à¦•à¦¾à¥¤">No formal computer training â€” everything technical was learned alone, from documentation, tutorials, and long nights of trial and error.</li>
         </ul>
       </section>
 
       <section id="security" class="rv">
-        <h2 data-en="Security Work" data-bn="নিরাপত্তা-সংক্রান্ত কাজ">Security Work</h2>
-        <p data-en="The curiosity started with a simple question: <em>how does a website actually work?</em> Learning HTML and JavaScript to answer it eventually led to a harder question — <em>where does a website quietly break?</em>"
-           data-bn="কৌতূহলের শুরুটা ছিল একটা সহজ প্রশ্ন দিয়ে: <em>একটা ওয়েবসাইট আসলে কীভাবে কাজ করে?</em> উত্তর খুঁজতে গিয়ে HTML আর JavaScript শেখা একসময় আরও কঠিন একটা প্রশ্নে নিয়ে দাঁড়াল — <em>ওয়েবসাইট নিঃশব্দে কোথায় ভেঙে পড়ে?</em>">
+        <h2 data-en="Security Work" data-bn="à¦¨à¦¿à¦°à¦¾à¦ªà¦¤à§à¦¤à¦¾-à¦¸à¦‚à¦•à§à¦°à¦¾à¦¨à§à¦¤ à¦•à¦¾à¦œ">Security Work</h2>
+        <p data-en="The curiosity started with a simple question: <em>how does a website actually work?</em> Learning HTML and JavaScript to answer it eventually led to a harder question â€” <em>where does a website quietly break?</em>"
+           data-bn="à¦•à§Œà¦¤à§‚à¦¹à¦²à§‡à¦° à¦¶à§à¦°à§à¦Ÿà¦¾ à¦›à¦¿à¦² à¦à¦•à¦Ÿà¦¾ à¦¸à¦¹à¦œ à¦ªà§à¦°à¦¶à§à¦¨ à¦¦à¦¿à¦¯à¦¼à§‡: <em>à¦à¦•à¦Ÿà¦¾ à¦“à¦¯à¦¼à§‡à¦¬à¦¸à¦¾à¦‡à¦Ÿ à¦†à¦¸à¦²à§‡ à¦•à§€à¦­à¦¾à¦¬à§‡ à¦•à¦¾à¦œ à¦•à¦°à§‡?</em> à¦‰à¦¤à§à¦¤à¦° à¦–à§à¦à¦œà¦¤à§‡ à¦—à¦¿à¦¯à¦¼à§‡ HTML à¦†à¦° JavaScript à¦¶à§‡à¦–à¦¾ à¦à¦•à¦¸à¦®à¦¯à¦¼ à¦†à¦°à¦“ à¦•à¦ à¦¿à¦¨ à¦à¦•à¦Ÿà¦¾ à¦ªà§à¦°à¦¶à§à¦¨à§‡ à¦¨à¦¿à¦¯à¦¼à§‡ à¦¦à¦¾à¦à¦¡à¦¼à¦¾à¦² â€” <em>à¦“à¦¯à¦¼à§‡à¦¬à¦¸à¦¾à¦‡à¦Ÿ à¦¨à¦¿à¦ƒà¦¶à¦¬à§à¦¦à§‡ à¦•à§‹à¦¥à¦¾à¦¯à¦¼ à¦­à§‡à¦™à§‡ à¦ªà¦¡à¦¼à§‡?</em>">
            The curiosity started with a simple question: <em>how does a website actually
            work?</em> Learning HTML and JavaScript to answer it eventually led to a harder
-           question — <em>where does a website quietly break?</em></p>
+           question â€” <em>where does a website quietly break?</em></p>
         <ul>
           <li data-en="Found and responsibly disclosed a security bug on NASA's official website through their Vulnerability Disclosure Program."
-              data-bn="NASA-এর অফিসিয়াল ওয়েবসাইটে একটি নিরাপত্তা-বাগ খুঁজে তাদের Vulnerability Disclosure Program-এর মাধ্যমে দায়িত্বশীলভাবে রিপোর্ট করেছে।">Found and responsibly disclosed a security bug on NASA's official website through their Vulnerability Disclosure Program.</li>
+              data-bn="NASA-à¦à¦° à¦…à¦«à¦¿à¦¸à¦¿à¦¯à¦¼à¦¾à¦² à¦“à¦¯à¦¼à§‡à¦¬à¦¸à¦¾à¦‡à¦Ÿà§‡ à¦à¦•à¦Ÿà¦¿ à¦¨à¦¿à¦°à¦¾à¦ªà¦¤à§à¦¤à¦¾-à¦¬à¦¾à¦— à¦–à§à¦à¦œà§‡ à¦¤à¦¾à¦¦à§‡à¦° Vulnerability Disclosure Program-à¦à¦° à¦®à¦¾à¦§à§à¦¯à¦®à§‡ à¦¦à¦¾à¦¯à¦¼à¦¿à¦¤à§à¦¬à¦¶à§€à¦²à¦­à¦¾à¦¬à§‡ à¦°à¦¿à¦ªà§‹à¦°à§à¦Ÿ à¦•à¦°à§‡à¦›à§‡à¥¤">Found and responsibly disclosed a security bug on NASA's official website through their Vulnerability Disclosure Program.</li>
           <li data-en="Has since reported vulnerabilities on several other international websites, receiving acknowledgements from the organisations involved."
-              data-bn="এরপর আরও কয়েকটি international ওয়েবসাইটে vulnerability রিপোর্ট করেছে, সংশ্লিষ্ট সংস্থাগুলোর কাছ থেকে স্বীকৃতিও পেয়েছে।">Has since reported vulnerabilities on several other international websites, receiving acknowledgements from the organisations involved.</li>
-          <li data-en="Working method is unhurried — reads a target site for hours before touching anything, the same way he reads a short story: closely, and more than once."
-              data-bn="কাজের পদ্ধতি ধীর ও ধীরস্থির — কিছু ছোঁয়ার আগে ঘণ্টার পর ঘণ্টা টার্গেট সাইটটা পড়ে, ঠিক যেভাবে ছোটগল্প পড়ে: খুঁটিয়ে, একবার নয় বারবার।">Working method is unhurried — reads a target site for hours before touching anything, the same way he reads a short story: closely, and more than once.</li>
+              data-bn="à¦à¦°à¦ªà¦° à¦†à¦°à¦“ à¦•à¦¯à¦¼à§‡à¦•à¦Ÿà¦¿ international à¦“à¦¯à¦¼à§‡à¦¬à¦¸à¦¾à¦‡à¦Ÿà§‡ vulnerability à¦°à¦¿à¦ªà§‹à¦°à§à¦Ÿ à¦•à¦°à§‡à¦›à§‡, à¦¸à¦‚à¦¶à§à¦²à¦¿à¦·à§à¦Ÿ à¦¸à¦‚à¦¸à§à¦¥à¦¾à¦—à§à¦²à§‹à¦° à¦•à¦¾à¦› à¦¥à§‡à¦•à§‡ à¦¸à§à¦¬à§€à¦•à§ƒà¦¤à¦¿à¦“ à¦ªà§‡à¦¯à¦¼à§‡à¦›à§‡à¥¤">Has since reported vulnerabilities on several other international websites, receiving acknowledgements from the organisations involved.</li>
+          <li data-en="Working method is unhurried â€” reads a target site for hours before touching anything, the same way he reads a short story: closely, and more than once."
+              data-bn="à¦•à¦¾à¦œà§‡à¦° à¦ªà¦¦à§à¦§à¦¤à¦¿ à¦§à§€à¦° à¦“ à¦§à§€à¦°à¦¸à§à¦¥à¦¿à¦° â€” à¦•à¦¿à¦›à§ à¦›à§‹à¦à¦¯à¦¼à¦¾à¦° à¦†à¦—à§‡ à¦˜à¦£à§à¦Ÿà¦¾à¦° à¦ªà¦° à¦˜à¦£à§à¦Ÿà¦¾ à¦Ÿà¦¾à¦°à§à¦—à§‡à¦Ÿ à¦¸à¦¾à¦‡à¦Ÿà¦Ÿà¦¾ à¦ªà¦¡à¦¼à§‡, à¦ à¦¿à¦• à¦¯à§‡à¦­à¦¾à¦¬à§‡ à¦›à§‹à¦Ÿà¦—à¦²à§à¦ª à¦ªà¦¡à¦¼à§‡: à¦–à§à¦à¦Ÿà¦¿à¦¯à¦¼à§‡, à¦à¦•à¦¬à¦¾à¦° à¦¨à¦¯à¦¼ à¦¬à¦¾à¦°à¦¬à¦¾à¦°à¥¤">Working method is unhurried â€” reads a target site for hours before touching anything, the same way he reads a short story: closely, and more than once.</li>
         </ul>
       </section>
 
       <section id="research" class="rv">
-        <h2 data-en="Research &amp; Reading" data-bn="গবেষণা ও পাঠ">Research &amp; Reading</h2>
+        <h2 data-en="Research &amp; Reading" data-bn="à¦—à¦¬à§‡à¦·à¦£à¦¾ à¦“ à¦ªà¦¾à¦ ">Research &amp; Reading</h2>
         <ul>
-          <li data-en="Current research sits where literature and technology overlap — treating language itself as a system with rules worth uncovering."
-              data-bn="বর্তমান গবেষণা সাহিত্য আর প্রযুক্তির সংযোগস্থলে — ভাষাকে নিজেই একটা সিস্টেম হিসেবে দেখা, যার নিয়মগুলো বের করা যায়।">Current research sits where literature and technology overlap — treating language itself as a system with rules worth uncovering.</li>
+          <li data-en="Current research sits where literature and technology overlap â€” treating language itself as a system with rules worth uncovering."
+              data-bn="à¦¬à¦°à§à¦¤à¦®à¦¾à¦¨ à¦—à¦¬à§‡à¦·à¦£à¦¾ à¦¸à¦¾à¦¹à¦¿à¦¤à§à¦¯ à¦†à¦° à¦ªà§à¦°à¦¯à§à¦•à§à¦¤à¦¿à¦° à¦¸à¦‚à¦¯à§‹à¦—à¦¸à§à¦¥à¦²à§‡ â€” à¦­à¦¾à¦·à¦¾à¦•à§‡ à¦¨à¦¿à¦œà§‡à¦‡ à¦à¦•à¦Ÿà¦¾ à¦¸à¦¿à¦¸à§à¦Ÿà§‡à¦® à¦¹à¦¿à¦¸à§‡à¦¬à§‡ à¦¦à§‡à¦–à¦¾, à¦¯à¦¾à¦° à¦¨à¦¿à¦¯à¦¼à¦®à¦—à§à¦²à§‹ à¦¬à§‡à¦° à¦•à¦°à¦¾ à¦¯à¦¾à¦¯à¦¼à¥¤">Current research sits where literature and technology overlap â€” treating language itself as a system with rules worth uncovering.</li>
           <li data-en="Off hours are spent almost entirely reading: novels, essays, and technical writing share the same shelf."
-              data-bn="অবসর কাটে প্রায় পুরোটাই পড়ায় — উপন্যাস, প্রবন্ধ আর টেকনিক্যাল লেখা একই তাকে থাকে।">Off hours are spent almost entirely reading: novels, essays, and technical writing share the same shelf.</li>
-          <li data-en="Long-term ambition is modest and specific — keep building quietly, keep reporting carefully, and let the work speak."
-              data-bn="দীর্ঘমেয়াদি লক্ষ্য সংযত আর সুনির্দিষ্ট — নিঃশব্দে বানিয়ে চলা, সাবধানে রিপোর্ট করা, আর কাজকেই নিজের কথা বলতে দেওয়া।">Long-term ambition is modest and specific — keep building quietly, keep reporting carefully, and let the work speak.</li>
+              data-bn="à¦…à¦¬à¦¸à¦° à¦•à¦¾à¦Ÿà§‡ à¦ªà§à¦°à¦¾à¦¯à¦¼ à¦ªà§à¦°à§‹à¦Ÿà¦¾à¦‡ à¦ªà¦¡à¦¼à¦¾à¦¯à¦¼ â€” à¦‰à¦ªà¦¨à§à¦¯à¦¾à¦¸, à¦ªà§à¦°à¦¬à¦¨à§à¦§ à¦†à¦° à¦Ÿà§‡à¦•à¦¨à¦¿à¦•à§à¦¯à¦¾à¦² à¦²à§‡à¦–à¦¾ à¦à¦•à¦‡ à¦¤à¦¾à¦•à§‡ à¦¥à¦¾à¦•à§‡à¥¤">Off hours are spent almost entirely reading: novels, essays, and technical writing share the same shelf.</li>
+          <li data-en="Long-term ambition is modest and specific â€” keep building quietly, keep reporting carefully, and let the work speak."
+              data-bn="à¦¦à§€à¦°à§à¦˜à¦®à§‡à¦¯à¦¼à¦¾à¦¦à¦¿ à¦²à¦•à§à¦·à§à¦¯ à¦¸à¦‚à¦¯à¦¤ à¦†à¦° à¦¸à§à¦¨à¦¿à¦°à§à¦¦à¦¿à¦·à§à¦Ÿ â€” à¦¨à¦¿à¦ƒà¦¶à¦¬à§à¦¦à§‡ à¦¬à¦¾à¦¨à¦¿à¦¯à¦¼à§‡ à¦šà¦²à¦¾, à¦¸à¦¾à¦¬à¦§à¦¾à¦¨à§‡ à¦°à¦¿à¦ªà§‹à¦°à§à¦Ÿ à¦•à¦°à¦¾, à¦†à¦° à¦•à¦¾à¦œà¦•à§‡à¦‡ à¦¨à¦¿à¦œà§‡à¦° à¦•à¦¥à¦¾ à¦¬à¦²à¦¤à§‡ à¦¦à§‡à¦“à¦¯à¦¼à¦¾à¥¤">Long-term ambition is modest and specific â€” keep building quietly, keep reporting carefully, and let the work speak.</li>
         </ul>
       </section>
 
@@ -313,18 +313,17 @@
   </div>
 
   <footer>
-    <span data-en="© 2026 Akash" data-bn="© ২০২৬ আকাশ">© 2026 Akash</span>
-    <span data-en="Last updated October 2026" data-bn="সর্বশেষ হালনাগাদ: অক্টোবর ২০২৬">Last updated October 2026</span>
+    <span data-en="Â© 2026 Akash" data-bn="Â© à§¨à§¦à§¨à§¬ à¦†à¦•à¦¾à¦¶">Â© 2026 Akash</span>
+    <span data-en="Last updated October 2026" data-bn="à¦¸à¦°à§à¦¬à¦¶à§‡à¦· à¦¹à¦¾à¦²à¦¨à¦¾à¦—à¦¾à¦¦: à¦…à¦•à§à¦Ÿà§‹à¦¬à¦° à§¨à§¦à§¨à§¬">Last updated October 2026</span>
   </footer>
 
 </div>
 
 <script>
-  // ---------- language toggle (English / Bangla) ----------
   var LANG_KEY = 'site-lang';
   var TITLES = {
-    en: 'Akash — Web Designer · App Developer · Bug Hunter',
-    bn: 'আকাশ — ওয়েব ডিজাইনার · অ্যাপ ডেভেলপার · বাগ হান্টার'
+    en: 'Akash â€” Web Designer Â· App Developer Â· Bug Hunter',
+    bn: 'à¦†à¦•à¦¾à¦¶ â€” à¦“à¦¯à¦¼à§‡à¦¬ à¦¡à¦¿à¦œà¦¾à¦‡à¦¨à¦¾à¦° Â· à¦…à§à¦¯à¦¾à¦ª à¦¡à§‡à¦­à§‡à¦²à¦ªà¦¾à¦° Â· à¦¬à¦¾à¦— à¦¹à¦¾à¦¨à§à¦Ÿà¦¾à¦°'
   };
 
   function setLang(lang) {
@@ -337,7 +336,7 @@
       el.innerHTML = el.getAttribute(attr);
     });
     var btn = document.getElementById('langToggle');
-    if (btn) btn.textContent = isBn ? 'English' : 'বাংলা';
+    if (btn) btn.textContent = isBn ? 'English' : 'à¦¬à¦¾à¦‚à¦²à¦¾';
     try { localStorage.setItem(LANG_KEY, isBn ? 'bn' : 'en'); } catch (e) {}
   }
 
@@ -347,14 +346,12 @@
     setLang(current === 'bn' ? 'en' : 'bn');
   });
 
-  // apply saved language on load
   (function () {
     var saved = 'en';
     try { saved = localStorage.getItem(LANG_KEY) || 'en'; } catch (e) {}
     if (saved === 'bn') setLang('bn');
   })();
 
-  // ---------- nav links: smooth scroll ----------
   document.querySelectorAll('nav a[href^="#"]').forEach(function (a) {
     a.addEventListener('click', function (e) {
       var target = document.querySelector(a.getAttribute('href'));
@@ -366,7 +363,6 @@
     });
   });
 
-  // ---------- fade-in on scroll ----------
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
